@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="Accept-Language" elementType="Header">
+            <stringProp name="Header.name">Accept-Language</stringProp>
+            <stringProp name="Header.value">en-IN,en-US;q=0.9,en;q=0.8</stringProp>
+          </elementProp>
+          <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+            <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+            <stringProp name="Header.value">1</stringProp>
+          </elementProp>
+          <elementProp name="Accept-Encoding" elementType="Header">
+            <stringProp name="Header.name">Accept-Encoding</stringProp>
+            <stringProp name="Header.value">gzip, deflate, br</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36</stringProp>
+          </elementProp>
+          <elementProp name="Accept" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">false</boolProp>
+        <boolProp name="useExpires">true</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="General Configuration" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="rampUpPeriod" elementType="Argument">
+            <stringProp name="Argument.name">rampUpPeriod</stringProp>
+            <stringProp name="Argument.value">${__P(rampUpPeriod,1)}</stringProp>
+            <stringProp name="Argument.desc">in seconds</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="maxUsers" elementType="Argument">
+            <stringProp name="Argument.name">maxUsers</stringProp>
+            <stringProp name="Argument.value">${__P(maxUsers,1)}</stringProp>
+            <stringProp name="Argument.desc">How many users should be started within rampup period</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="serverName" elementType="Argument">
+            <stringProp name="Argument.name">serverName</stringProp>
+            <stringProp name="Argument.value">${__P(webservice.host,www.sbs.com.au)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">environment to run</stringProp>
+          </elementProp>
+          <elementProp name="apiPath1" elementType="Argument">
+            <stringProp name="Argument.name">apiPath1</stringProp>
+            <stringProp name="Argument.value">${__P(apiPath1,guide/ajax_radio_program_catchup_data)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="language" elementType="Argument">
+            <stringProp name="Argument.name">language</stringProp>
+            <stringProp name="Argument.value">${__P(language,language/hindi)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">default will be language/hindi</stringProp>
+          </elementProp>
+          <elementProp name="location" elementType="Argument">
+            <stringProp name="Argument.name">location</stringProp>
+            <stringProp name="Argument.value">${__P(location,location/NSW)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">default will be location/NSW</stringProp>
+          </elementProp>
+          <elementProp name="sublocation" elementType="Argument">
+            <stringProp name="Argument.name">sublocation</stringProp>
+            <stringProp name="Argument.value">${__P(sublocation,sublocation/Sydney)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">default will be sublocation/Sydney</stringProp>
+          </elementProp>
+        </collectionProp>
+        <stringProp name="TestPlan.comments">All these parameters can be set in CI/CD to change job behavior</stringProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Validate Login" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="archiveAudio" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${serverName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${apiPath1}/${language}/${location}/${sublocation}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Response Assertion " enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="script">import groovy.json.JsonSlurper
+import org.apache.jmeter.util.JMeterUtils;
+import java.net.*
+import java.util.*
+import java.lang.String.*
+
+def failureMessage = &quot;&quot;
+def responseCode = Integer.parseInt(prev.getResponseCode())
+
+log.info(&quot;Executing Test Case: &quot; + AssertionResult.getName())
+log.info(&quot;Request : &quot; + SampleResult.getURL())
+log.debug(&quot;Response: \n&quot; + SampleResult.getResponseDataAsString())
+//if condition to validate if response is successful
+if(responseCode != 200) {
+		failureMessage += &quot;ERROR: \tInvalid response. Actual ResponseCode: &quot; + responseCode + 
+	 					&quot;\tERROR: Expected = &quot; + 200 + &quot;\n&quot;   
+		}
+
+if (failureMessage?.trim()) {
+	AssertionResult.setFailureMessage(failureMessage);
+     AssertionResult.setFailure(true);    
+}
+
+// Print error messages if any
+if (failureMessage?.trim()) {
+    failureMessage += &quot;ERROR: \tURL: &quot; + SampleResult.getURL() + &quot;&amp;&quot; + requestParameters + &quot;\n&quot;;
+    failureMessage += &quot;ERROR: \tREQUEST HEADERS: &quot; + SampleResult.getRequestHeaders();
+    log.error(&quot;\n&quot; + failureMessage)
+    AssertionResult.setFailureMessage(failureMessage);
+    AssertionResult.setFailure(true);    
+}</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Validate audio streams are in ${language}" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import groovy.json.JsonSlurper
+import org.apache.jmeter.util.JMeterUtils;
+import java.net.*
+import java.util.*
+import java.lang.String.*
+
+
+def failureMessage = &quot;&quot;
+def responseCode = Integer.parseInt(prev.getResponseCode())
+def parsedJson = null;
+def expectedLanguage = &quot;${language}&quot;.toLowerCase();
+
+JsonSlurper JSON = new JsonSlurper();
+log.info(&quot;Executing Test Case: &quot; + AssertionResult.getName())
+log.info(&quot;Request : &quot; + SampleResult.getURL())
+if (responseCode == 200){
+	parsedJson = JSON.parseText(prev.getResponseDataAsString());
+	for(i = 0; i &lt;= parsedJson.size() - 1; i++){
+		def program = parsedJson[i].program.toLowerCase();	
+		if(!expectedLanguage.contains(program)){
+			failureMessage += &quot;\nERROR: \tLanguage profile does not match. Expected &quot; + expectedLanguage + &quot;\t&quot; + &quot;Actual: &quot; + program 
+		}
+	}
+}
+
+if (failureMessage?.trim()) {
+	AssertionResult.setFailureMessage(failureMessage);
+     AssertionResult.setFailure(true);    
+}
+
+// Print error messages if any
+if (failureMessage?.trim()) {
+    failureMessage += &quot;\nERROR: \tURL: &quot; + SampleResult.getURL() + &quot;\n&quot;;
+    failureMessage += &quot;ERROR: \tREQUEST HEADERS: &quot; + SampleResult.getRequestHeaders() + &quot;\n&quot;;
+    log.error(&quot;\n&quot; + failureMessage)
+    AssertionResult.setFailureMessage(failureMessage);
+    AssertionResult.setFailure(true);    
+}	
+		
+</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Validate audio streams JSON values" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="script">import groovy.json.JsonSlurper
+import org.apache.jmeter.util.JMeterUtils;
+import java.net.*
+import java.util.*
+import java.lang.String.*
+
+
+def failureMessage = &quot;&quot;
+def responseCode = Integer.parseInt(prev.getResponseCode())
+def parsedJson = null;
+def expectedLanguage = &quot;${language}&quot;.toLowerCase();
+def expectedChannelName = &quot;SBSRadio2&quot;;
+def expectedAnalogueFrequency = &quot;97.7fm&quot;
+
+JsonSlurper JSON = new JsonSlurper();
+log.info(&quot;Executing Test Case: &quot; + AssertionResult.getName())
+log.info(&quot;Request : &quot; + SampleResult.getURL())
+
+if (responseCode == 200){
+	parsedJson = JSON.parseText(prev.getResponseDataAsString());
+	for(i = 0; i &lt;= parsedJson.size() - 1; i++){
+
+		//Check for existence of &apos;label&apos;
+		if(!parsedJson[i].label?.trim()){
+			failureMessage += &quot;\nERROR: \tLabel is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i] 
+		}
+
+		//Check for existence of &apos;program&apos;
+		if(!parsedJson[i].program?.trim()){
+			failureMessage += &quot;\nERROR: \tprogram is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i] 
+		}
+		else{
+			
+			def program = parsedJson[i].program.toLowerCase()
+			//Check if language is same as in the request
+			if(!expectedLanguage.contains(program)){
+				failureMessage += &quot;\nERROR: \tLanguage profile does not match. Expected &quot; + expectedLanguage + &quot;\t&quot; + &quot;Actual: &quot; + program  
+			}
+		}
+
+		//Check for existence of &apos;channelName&apos;
+		if(!parsedJson[i].channelName?.trim()){
+			
+			failureMessage += &quot;\nERROR: \tchannelNameis missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i]  
+		}
+		else{
+			//Check if channelName is as expected
+			def channelName = parsedJson[i].channelName
+			if(channelName != expectedChannelName){
+				failureMessage += &quot;\nERROR: \tIncorrect channelName. Expected: &quot; + expectedChannelName + &quot;\t&quot; + &quot;Actual: &quot; + channelName 
+			}
+		}
+
+		//Check for existence of &apos;startTime&apos;
+		if(!parsedJson[i].startTime){
+			failureMessage += &quot;\nERROR: \tstartTime is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i] 
+		}
+		//Check for existence of &apos;endTime&apos;
+		if(!parsedJson[i].endTime){
+			failureMessage += &quot;\nERROR: \tendTime is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i] 
+		}
+
+		//Check for existence of &apos;onDigitalRadio&apos;
+		if(!parsedJson[i].onDigitalRadio){
+			failureMessage += &quot;\nERROR: \tonDigitalRadio is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i] 
+		}
+		else{
+			def onDigitalRadio = parsedJson[i].onDigitalRadio
+			//Check if onDigitalRadio is true
+			if(!onDigitalRadio){
+				failureMessage += &quot;\nERROR: \tonDigitalRadio is false &quot; + &quot;\t&quot; + &quot;Expected: &quot; + &quot;true&quot; + &quot;\t&quot; + &quot;Actual: &quot; + onDigitalRadio 
+			}
+		}
+
+		//Check for existence of &apos;analogueFrequency&apos;
+		if(!parsedJson[i].analogueFrequency?.trim()){
+			failureMessage += &quot;\nERROR: \tanalogueFrequency is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i] 
+		}
+		else{
+			def analogueFrequency =  parsedJson[i].analogueFrequency
+			//Check if &apos;analogueFrequency&apos; is 97.7fm
+			if( analogueFrequency != expectedAnalogueFrequency){
+				
+				failureMessage += &quot;\nERROR: \tonDigitalRadio is false &quot; + &quot;\t&quot; + &quot;Expected: &quot; + expectedAnalogueFrequency + &quot;\t&quot; + &quot;Actual: &quot; + analogueFrequency 
+			}
+		}
+
+		//Check for existence of &apos;archiveAudio&apos;
+		if(!parsedJson[i].archiveAudio){
+			failureMessage += &quot;\nERROR: \tarchiveAudio is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + parsedJson[i] 
+		}
+		
+		else{
+			
+			def archiveAudio = parsedJson[i].archiveAudio
+		
+			//Check for existence of &apos;mp3&apos;
+			if(!archiveAudio.mp3?.trim()){
+				failureMessage += &quot;\nERROR: \tmp3 url is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + archiveAudio  
+			}
+			//Check for existence of &apos;m4a&apos;
+			if(!archiveAudio.m4a){
+				failureMessage += &quot;\nERROR: \tm4a url is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + archiveAudio 
+			}
+	
+//			//Check for existence of &apos;flv&apos;
+			if(!archiveAudio.flv){
+				failureMessage += &quot;\nERROR: \tflv url is missing &quot; + &quot;\t&quot; + &quot;Actual: &quot; + archiveAudio 
+			}
+		}
+	}
+}
+
+if (failureMessage?.trim()) {
+	AssertionResult.setFailureMessage(failureMessage);
+     AssertionResult.setFailure(true);    
+}
+
+// Print error messages if any
+if (failureMessage?.trim()) {
+    failureMessage += &quot;\nERROR: \tURL: &quot; + SampleResult.getURL() + &quot;\n&quot;;
+    failureMessage += &quot;ERROR: \tREQUEST HEADERS: &quot; + SampleResult.getRequestHeaders() + &quot;\n&quot;;
+    log.error(&quot;\n&quot; + failureMessage)
+    AssertionResult.setFailureMessage(failureMessage);
+    AssertionResult.setFailure(true);    
+}	
+		
+</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor" enabled="true">
+            <stringProp name="JMESExtractor.referenceName">mp3</stringProp>
+            <stringProp name="JMESExtractor.jmesPathExpr">[].archiveAudio.mp3</stringProp>
+            <stringProp name="JMESExtractor.matchNumber">-1</stringProp>
+          </JMESPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach Controller" enabled="true">
+          <stringProp name="ForeachController.inputVal">mp3</stringProp>
+          <stringProp name="ForeachController.returnVal">mp3_index</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+        </ForeachController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Request MP3 Url" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${mp3_index}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Response Assertion " enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">false</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper
+import org.apache.jmeter.util.JMeterUtils;
+import java.net.*
+import java.util.*
+import java.lang.String.*
+
+def failureMessage = &quot;&quot;
+def responseCode = Integer.parseInt(prev.getResponseCode())
+
+log.info(&quot;Executing Test Case: &quot; + AssertionResult.getName())
+log.info(&quot;Request : &quot; + SampleResult.getURL())
+log.debug(&quot;Response: \n&quot; + SampleResult.getResponseDataAsString())
+//if condition to validate if response is successful
+if(responseCode != 200) {
+		failureMessage += &quot;ERROR: \tInvalid response. Actual ResponseCode: &quot; + responseCode + 
+	 					&quot;\tERROR: Expected = &quot; + 200 + &quot;\n&quot;   
+		}
+
+if (failureMessage?.trim()) {
+	AssertionResult.setFailureMessage(failureMessage);
+     AssertionResult.setFailure(true);    
+}
+
+// Print error messages if any
+if (failureMessage?.trim()) {
+    failureMessage += &quot;ERROR: \tURL: &quot; + SampleResult.getURL() + &quot;&amp;&quot; + requestParameters + &quot;\n&quot;;
+    failureMessage += &quot;ERROR: \tREQUEST HEADERS: &quot; + SampleResult.getRequestHeaders();
+    log.error(&quot;\n&quot; + failureMessage)
+    AssertionResult.setFailureMessage(failureMessage);
+    AssertionResult.setFailure(true);    
+}</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

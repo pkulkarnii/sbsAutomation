@@ -1,0 +1,9 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1626516346795,468,archiveAudio,200,OK,Validate Login 1-1,text,true,,1083,488,1,1,https://www.sbs.com.au/guide/ajax_radio_program_catchup_data/language/hindi/location/NSW/sublocation/Sydney,466,0,436
+1626516348551,7682,Request MP3 Url,200,OK,Validate Login 1-1,bin,true,,43207708,476,1,1,https://media.sbs.com.au/ondemand/audio/Saturday_ONDemand_SBS_RADIO2_17_00.mp3?mtime=1626509655,102,0,82
+1626516356319,7987,Request MP3 Url,200,OK,Validate Login 1-1,bin,true,,43209588,474,1,1,https://media.sbs.com.au/ondemand/audio/Friday_ONDemand_SBS_RADIO2_17_00.mp3?mtime=1626423977,27,0,0
+1626516364354,8604,Request MP3 Url,200,OK,Validate Login 1-1,bin,true,,43207708,476,1,1,https://media.sbs.com.au/ondemand/audio/Thursday_ONDemand_SBS_RADIO2_17_00.mp3?mtime=1626337586,23,0,0
+1626516373011,8404,Request MP3 Url,200,OK,Validate Login 1-1,bin,true,,43207081,477,1,1,https://media.sbs.com.au/ondemand/audio/Wednesday_ONDemand_SBS_RADIO2_17_00.mp3?mtime=1626251190,60,0,0
+1626516381460,10702,Request MP3 Url,200,OK,Validate Login 1-1,bin,true,,43207081,475,1,1,https://media.sbs.com.au/ondemand/audio/Tuesday_ONDemand_SBS_RADIO2_17_00.mp3?mtime=1626164918,19,0,0
+1626516392202,8109,Request MP3 Url,200,OK,Validate Login 1-1,bin,true,,43207081,474,1,1,https://media.sbs.com.au/ondemand/audio/Monday_ONDemand_SBS_RADIO2_17_00.mp3?mtime=1626078365,49,0,0
+1626516400350,10987,Request MP3 Url,200,OK,Validate Login 1-1,bin,true,,43207080,474,1,1,https://media.sbs.com.au/ondemand/audio/Sunday_ONDemand_SBS_RADIO2_17_00.mp3?mtime=1625991268,57,0,0
