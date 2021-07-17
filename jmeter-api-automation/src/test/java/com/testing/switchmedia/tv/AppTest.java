@@ -1,4 +1,4 @@
-// package com.testing.switchmedia.tv;
+// package com.testing.tv;
 
 // import junit.framework.Test;
 // import junit.framework.TestCase;

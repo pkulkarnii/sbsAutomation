@@ -1,4 +1,4 @@
-package com.testing.switchmedia.tv;
+package com.testing.tv;
 
 /**
  * Hello world!
